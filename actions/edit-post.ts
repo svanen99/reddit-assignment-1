@@ -42,7 +42,7 @@ export const editPost = async ({
     throw new Error("you're not allowed to edit this post")
   }
 
-  const { image, ...updateData } = parsedData
+  const { ...updateData } = parsedData
 
 
   const { data: updatedPost } = await supabase

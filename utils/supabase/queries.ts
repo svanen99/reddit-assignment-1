@@ -1,17 +1,24 @@
+'use server'
+
 import 'server-only'
-
 import { type QueryData } from '@supabase/supabase-js'
-
 import { createClient } from './server'
 
-export const getComments = (postId: string) => {
+export const getComments = async (postId: string) => {
   const supabase = createClient()
 
-  return supabase
+  const { data, error } = await supabase
     .from('comments')
-    .select('id, text, user_id, users(email)')
+    .select('id, text, user_id, users:users!comments_user_id_fkey(email)')
     .eq('post_id', postId)
     .order('created_at', { ascending: false })
+
+  if (error) {
+    console.error('Error fetching comments:', error)
+    return null
+  }
+
+  return data
 }
 
 export const getHomePosts = () => {
@@ -19,9 +26,9 @@ export const getHomePosts = () => {
 
   return supabase
     .from('posts')
-    .select('id, title, slug, image, users("email")')
+    .select('id, title, slug, users("email")')
     .order('created_at', { ascending: false })
 }
 
 export type HomePostsType = QueryData<ReturnType<typeof getHomePosts>>
-export type PostCommentsType = QueryData<ReturnType<typeof getComments>>
+export type PostCommentsType = Awaited<ReturnType<typeof getComments>>

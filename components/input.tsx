@@ -17,7 +17,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(
         {...props}
         name={name}
         id={name}
-        className='peer w-full rounded-full border border-zinc-200 bg-white mt-5 mb-5 px-4 py-2 text-base text-zinc-800 outline-none placeholder:text-transparent'
+        className='peer w-full rounded-full border border-[#fa5639] bg-white mt-5 mb-5 px-4 py-2 text-base text-zinc-800 outline-none placeholder:text-transparent'
         placeholder={label}
       />
       <label

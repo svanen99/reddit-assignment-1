@@ -22,16 +22,3 @@ export const signUp = async (data: z.infer<typeof signUpSchema>) => {
   
   redirect('/')
 }
-
-/* const {
-    data: { user },
-    error
-  } = await supabase.auth.signUp(data)
-  if (error) {
-    throw error
-  }
-  
-  if (user && user.email) {
-    const { id, email } = user
-    await supabase.from('users').insert([{ id, email }])
-  }*/

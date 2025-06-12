@@ -20,7 +20,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, Props>(
           {...props}
           name={name}
           id={name}
-          className='peer min-h-96 w-full rounded-3xl border border-zinc-200 bg-white px-4 py-2 text-base text-zinc-800 outline-none placeholder:text-transparent'
+          className='peer min-h-96 w-full rounded-3xl border border-[#fa5639] bg-white px-4 py-2 text-base text-zinc-800 outline-none placeholder:text-transparent'
           placeholder={label}
         />
         <label

@@ -50,7 +50,7 @@ export const CreateCommentForm = ({ postId }: CreateCommentFormProps) => {
   return (
     <form
       onSubmit={handleSubmit((values) => {
-        console.log('Submitting with:', { ...values, postId })
+        
         mutate(values)
       })}
       className='mt-4 flex w-full flex-col gap-4'

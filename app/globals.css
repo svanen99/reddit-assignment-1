@@ -9,10 +9,10 @@
 }
 
 body {
-  background-image: url('../images/green.jpg');
+  background-color: #209d50;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Optional: Makes it stay fixed while scrolling */
+  background-attachment: fixed;
   min-height: 100vh; 
 }

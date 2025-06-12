@@ -15,8 +15,6 @@ import { useMutation } from '@tanstack/react-query'
 const isServer = typeof window === 'undefined'
 
 const createPostSchema = postSchema
-  .omit({ image: true })
-  .extend({ image: isServer ? z.any() : z.instanceof(FileList).optional() })
 
 export const CreatePostForm = () => {
   const { mutate, error, isPending } = useMutation({
@@ -35,17 +33,12 @@ export const CreatePostForm = () => {
   return (
     <form
       onSubmit={handleSubmit((values) => {
-        const imageForm = new FormData()
-
-        if (values.image && values.image?.length === 1) {
-          imageForm.append('image', values.image[0])
-        }
+     
 
         mutate({
           title: values.title,
           content: values.content,
-          image: imageForm,
-        })
+                })
       })}
       className='flex w-full flex-col gap-4'
     >
@@ -54,12 +47,6 @@ export const CreatePostForm = () => {
         {...register('content')}
         label='content'
         error={errors.content}
-      />
-      <Input
-        type='file'
-        {...register('image')}
-        label='image'
-        error={errors.image as FieldError}
       />
       <Button type='submit'>{isPending ? 'uploading post...' : 'post'}</Button>
       {error && <p className='text-primary'>{error.message}</p>}

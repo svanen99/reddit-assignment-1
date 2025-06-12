@@ -25,7 +25,6 @@ export const EditCommentButton = ({
     mutationFn: editComment,
     onError: (error) => toast.error(error.message),
     onSuccess: () => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       toast.success('your post was edited!'), reset(), onCancel()
     },
     onMutate: () => toast.loading('editing post...'),

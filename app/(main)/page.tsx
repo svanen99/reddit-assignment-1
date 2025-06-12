@@ -11,12 +11,11 @@ export default async function Home() {
         <div>no posts found!</div>
       ) : (
         <section className='flex flex-col items-center gap-4'>
-          {posts.map(({ id, title, slug, users, image }) => (
+          {posts.map(({ id, title, slug, users, }) => (
             <HomePost
               key={id}
               title={title}
               slug={slug}
-              image={image}
               author={users?.email || 'anonymous'}
             />
           ))}

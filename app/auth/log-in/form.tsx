@@ -13,7 +13,6 @@ import { Input } from '@/components/input'
 export const LogInForm = () => {
   const { mutate, error, isPending } = useMutation({
     mutationFn: logIn,
-    onError: (error) => console.log(error.message),
   })
 
   const {

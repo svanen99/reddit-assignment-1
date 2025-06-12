@@ -1,11 +1,9 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-
-import { getComments } from '@/utils/supabase/queries'
 import { createClient } from '@/utils/supabase/server'
 import { DeletePostButton } from '@/components/delete-post-button'
-
 import { CommentContainer } from '@/components/comment-container'
+import { getComments } from '@/utils/supabase/queries'
 import { Button } from '@/components/button'
 
 export default async function PostPage({
@@ -27,7 +25,7 @@ export default async function PostPage({
   } = await supabase.auth.getUser()
   const isAuthor = user && user.id === post.user_id
 
-  const { data: comments } = await getComments(post.id)
+  const comments = await getComments(post.id)
 
   const isCommentAuthor = (commentUserId: string) => {
     return user && user.id === commentUserId
@@ -43,7 +41,7 @@ export default async function PostPage({
 
   return (
     <main className='main'>
-      <article className='space-y-4 bg-[#E993B0] border-2 rounded-2xl p-5  drop-shadow-2xl'>
+      <article className='space-y-4 bg-[#fa5639] border-2 rounded-2xl p-5 drop-shadow-2xl'>
         <header className='flex items-start justify-between'>
           <div className='space-y-1'>
             <span className='text-black'>{post.users?.email}</span>

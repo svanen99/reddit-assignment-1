@@ -6,7 +6,7 @@ import { PostCommentsType } from '@/utils/supabase/queries'
 import { useState } from 'react'
 import { Button } from './button'
 
-type CommentData = PostCommentsType[number] & {
+type CommentData = NonNullable<PostCommentsType>[number] & {
   isPostAuthor: boolean
   isCommentAuthor: boolean
 }
@@ -21,7 +21,7 @@ export const CommentComponent = ({
   const [activeEdit, setActiveEdit] = useState(false)
 
   return (
-    <div className='pink mt-4 rounded border bg-accent p-4'>
+    <div className=' mt-4 rounded-md border-2 border-[#fa5639] p-4'>
       <p className='text-sm text-zinc-600'>{users?.email}</p>
       {activeEdit ? (
         <EditCommentButton
