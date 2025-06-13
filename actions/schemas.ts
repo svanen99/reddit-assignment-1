@@ -19,6 +19,3 @@ export const commentSchema = z.object({
   postId: z.string(),
   text: z.string().min(1, 'comment must be at least 1 character'),
 })
-
-
-

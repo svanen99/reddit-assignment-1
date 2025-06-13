@@ -4,13 +4,10 @@ import { useMutation } from '@tanstack/react-query'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-
 import { signUp } from '@/actions/sign-up'
 import { signUpSchema } from '@/actions/schemas'
 import { Button } from '@/components/button'
 import { Input } from '@/components/input'
-
-
 
 export const SignUpForm = () => {
   const { mutate, error, isPending } = useMutation({
@@ -43,6 +40,4 @@ export const SignUpForm = () => {
       {error && <p className='text-primary'>{error.message}</p>}
     </form>
   )
-  
-  
 }

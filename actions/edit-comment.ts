@@ -2,8 +2,6 @@
 
 import { createClient } from '@/utils/supabase/server'
 import { revalidatePath } from 'next/cache'
-import { z } from 'zod'
-import { commentSchema } from './schemas'
 
 export const editComment = async ({
   newText,

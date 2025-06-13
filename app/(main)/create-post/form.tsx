@@ -1,18 +1,15 @@
 'use client'
 
-import { type FieldError, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { toast } from 'sonner'
 import { z } from 'zod'
-
 import { Button } from '@/components/button'
 import { Input } from '@/components/input'
 import { Textarea } from '@/components/textarea'
 import { postSchema } from '@/actions/schemas'
 import { createPost } from '@/actions/create-post'
 import { useMutation } from '@tanstack/react-query'
-
-const isServer = typeof window === 'undefined'
+import { useForm } from 'react-hook-form'
 
 const createPostSchema = postSchema
 
@@ -33,8 +30,6 @@ export const CreatePostForm = () => {
   return (
     <form
       onSubmit={handleSubmit((values) => {
-     
-
         mutate({
           title: values.title,
           content: values.content,

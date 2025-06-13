@@ -25,8 +25,10 @@ export const EditCommentButton = ({
     mutationFn: editComment,
     onError: (error) => toast.error(error.message),
     onSuccess: () => {
-      toast.success('your post was edited!'), reset(), onCancel()
-    },
+      toast.success('your post was edited!')
+      reset()
+      onCancel()
+    },    
     onMutate: () => toast.loading('editing post...'),
     onSettled: () => toast.dismiss(),
   })

@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { toast } from 'sonner'
-
 import { editPost } from '@/actions/edit-post'
 import { postSchema } from '@/actions/schemas'
 import { Button } from '@/components/button'

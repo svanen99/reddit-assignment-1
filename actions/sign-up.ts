@@ -2,7 +2,6 @@
 
 import { redirect } from 'next/navigation'
 import { z } from 'zod'
-
 import { signUpSchema } from './schemas'
 import { createClient } from '@/utils/supabase/server'
 

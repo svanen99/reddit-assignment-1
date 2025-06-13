@@ -1,6 +1,5 @@
 import { forwardRef, type InputHTMLAttributes } from 'react'
 import { type FieldError } from 'react-hook-form'
-
 import { cn } from '@/utils/classnames'
 
 type Props = Omit<InputHTMLAttributes<HTMLInputElement>, 'id' | 'htmlFor'> & {

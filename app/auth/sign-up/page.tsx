@@ -1,5 +1,4 @@
 import Link from 'next/link'
-
 import { SignUpForm } from './form'
 
 export default function LogInPage() {
@@ -10,7 +9,7 @@ export default function LogInPage() {
         <SignUpForm />
       </div>
       <Link href='/auth/log-in' className='text-black'>
-        already have an account? log in
+        already have an account? log in here!
       </Link>
     </main>
   )

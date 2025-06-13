@@ -2,7 +2,6 @@
 
 import { useMutation } from '@tanstack/react-query'
 import { toast } from 'sonner'
-
 import { deletePost } from '@/actions/delete-post'
 import { Button } from './button'
 

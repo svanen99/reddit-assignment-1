@@ -1,6 +1,5 @@
 import { type VariantProps, cva } from 'class-variance-authority'
 import { type ElementType } from 'react'
-
 import { cn } from '@/utils/classnames'
 import { type PolymorphicPropsWithoutRef } from '@/types/polymorphic'
 

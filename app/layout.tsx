@@ -1,7 +1,6 @@
 import { Albert_Sans } from 'next/font/google'
 import { Toaster } from 'sonner'
 import type { Metadata } from 'next'
-
 import { cn } from '@/utils/classnames'
 import { QueryClientProvider } from '@/providers/query-client-provider'
 import './globals.css'

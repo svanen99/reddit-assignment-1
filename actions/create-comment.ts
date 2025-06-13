@@ -12,7 +12,7 @@ export const createComment = async ({
 }) => {
 
   const parsedData = commentSchema.parse(data)
-
+  
   const supabase = createClient()
 
   const {

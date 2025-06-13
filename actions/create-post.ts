@@ -3,7 +3,6 @@
 import { redirect } from 'next/navigation'
 import { revalidatePath } from 'next/cache'
 import { z } from 'zod'
-
 import { postSchema } from './schemas'
 import { createClient } from '@/utils/supabase/server'
 import { slugify } from '@/utils/slugify'

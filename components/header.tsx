@@ -1,5 +1,4 @@
 import Link from 'next/link'
-
 import { createClient } from '@/utils/supabase/server'
 import { LogOutButton } from './log-out-button'
 import { Button } from './button'
@@ -30,4 +29,3 @@ export const Header = async () => {
   </header>
 )
 }
-
